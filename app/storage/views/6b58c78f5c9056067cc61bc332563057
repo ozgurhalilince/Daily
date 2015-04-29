@@ -1,0 +1,37 @@
+<?php $__env->startSection('content'); ?>
+
+<div class="readpost">		
+	<div class="post">
+		<div align="right">
+			  <a href="delete-post-<?php echo $post->postID; ?>"><button id="deletePostBut">sil</button></a><br>
+		</div>
+		<div class="l">
+			<p><img src="<?php echo $member->photo; ?>"></p>
+			<p><b>Kişi:</b><br> <a href="m-profile-<?php echo $post->memberID;; ?>">
+			<?php echo $member->name;; ?> <?php echo $member->surname;; ?></a></p>
+			<p><b>Tarih:</b><br> <?php echo $post->created_at;; ?></p>
+			<p><b>Görünebilirlik:</b><br> 
+				<?php if ($post->visibility == 0) 
+						echo "Sadece Ben";
+					else if ($post->visibility == 1) 
+						echo "Yalnız Üyeler";
+					else
+						echo "Herkes";
+				 ?>
+			</p>
+		</div>
+		<div class="r">
+			<h2><?php echo $post->title; ?></h2>
+			<p><?php echo $post->content; ?></p>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+$("#deletePostBut")
+	.click(function(){
+		if (!confirm("Bu yazıyı silmek istediğinize emin misiniz?")) 
+			return false;
+})
+</script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make("admin/kalip3", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

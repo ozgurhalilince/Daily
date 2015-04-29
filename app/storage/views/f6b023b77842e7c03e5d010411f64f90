@@ -1,0 +1,31 @@
+<?php $__env->startSection('contentt'); ?>
+
+<div class="searchResults">
+  <center><h1>Sonuçlar</h1></center>
+      <table id="searchTable">
+      <?php $j=0; ?>
+        <?php $__empty_1 = true; foreach($members as $user): $__empty_1 = false; ?>  
+        <?php if($j%3==0): ?>
+          <tr>
+        <?php endif; ?>
+        <td>
+        <div class="member-p">
+         <a href="m-profile-<?php echo $user->memberID; ?>">
+          <img align="left" src="<?php echo $user->photo; ?>">
+         </a> 
+         <div class="break"></div>
+         <a href="m-profile-<?php echo $user->memberID; ?>"><?php echo $user->name; ?> <?php echo $user->surname; ?></a>
+        </div>
+        </td>       
+        <?php if($j%3==2): ?>
+          </tr>
+        <?php endif; ?>
+        <?php $j++; ?>
+        <?php endforeach; if ($__empty_1): ?>
+            <p>Aramanla eşleşen bir sonuç bulunamadı.</p>
+        <?php endif; ?>
+      </table>
+ </div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make("member/member_kalip", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

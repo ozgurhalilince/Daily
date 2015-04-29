@@ -1,0 +1,258 @@
+* {
+	margin: 0; padding: 0;
+}
+
+body{
+	background-color: #3db2e1;
+}
+
+.break {
+	font-size: 0;
+	width: 0; height: 0;
+	clear: both
+}
+
+#cssmenu input{
+	height: 40px;
+	width: 200px;	
+}
+
+#all {
+	background-color: white;
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+#content {
+	padding-right: 20px;
+	padding-top: 10px;
+	float: left;
+	width: 100%;
+}
+
+#content .profile{
+	padding-left: 30px;
+	width: 100%;
+}
+
+#content .profile table button{
+	color: white;
+	background-color: #FF6600;
+	text-align: center;
+	width: 50%;
+	height: 5%;
+}
+
+#content .profilemenu{
+	width: 100%;
+	height: 80px;
+	text-align: center;
+}
+#content .profilemenu button{
+	font-weight: bold;
+	font-size: 180%;
+	width: 16%;
+	height: 100%;
+}
+
+#content .m-profile{
+	padding-left: 30px;
+	width: 100%;
+}
+#content .m-profile table{
+	padding-left: 30px;
+	width: 100%;
+}
+#content .name-surname{
+	font-size: 200%;
+	color: darkred;
+}
+#content .m-profile table button{
+	color: white;
+	background-color: #FF6600;
+	text-align: center;
+	width: 10%;
+	height: 10%;
+	margin: -7% -10%;
+	position: fixed;
+	font-family: thoama;
+}
+
+#content .m-profilemenu{
+	width: 100%;
+	height: 8%;
+	text-align: center;
+}
+#content .m-profilemenu button{
+	font-weight: bold;
+	font-size: 100%;
+	width: 16%;
+	height: 100%;
+}
+#content .addPost{
+	background-color: blue;
+}
+#content .operations{
+	width: 700px;
+	height: 400px;
+}
+#content .post {
+		clear: both;
+		padding: 20px 20px;
+	}
+	#content .first {
+		padding-top: 0;
+	}
+		#content .post .l {
+			float: left;
+			width: 45%;
+			font-size: 0.9em;
+			color: #292929;
+			padding-top: 30px;
+		}
+			#content .post .l img {
+				width: 200px; height: 200px;
+				margin-bottom: 15px;
+			}
+			#content .post .l a {
+				text-decoration: none;
+			}
+		#content .post .r {
+			float: right;
+			width: 55%;
+		}
+		#content h2 {
+			font-size: 2.5em;
+			margin-bottom: 15px;
+			color: red;
+		}
+			#content h2 a {
+				text-decoration: none;
+			}
+		#content p {
+			line-height: 1.3em;
+			margin-bottom: 10px;
+		}
+		#content ul, #content ol {
+			list-style-position: inside;
+			margin-bottom: 10px;
+		}
+		#content li {
+			line-height: 1.3em;
+		}
+		#content h3, #content h4, #content h5, #content h6 {
+			font-size: 1.2em;
+			margin-bottom: 5px;
+		}
+		#content blockquote {
+			padding: 10px 10px 0;
+			background-color: #eeeeee;
+			border-width: 1px 0;
+			border-style: solid;
+			border-color: #e0e0e0;
+			margin-bottom: 10px;
+		}
+		#content .details {
+			background: url(images/details.gif) repeat-x 0 0;
+			float: left;
+			font-size: 0.9em;
+			padding: 10px;
+			border-width: 0 1px;
+			border-style: solid;
+			border-color: #B5B5B5;
+		}
+			#content .details a {
+				text-decoration: none;
+				display: block;
+				float: left;
+			}
+			#content .details a.link1 {
+				padding-right: 10px;
+				border-right: 1px solid #D6D6D6;
+			}
+			#content .details .link2 a {
+				padding-left: 10px;
+				border-left: 1px solid #ffffff;
+			}
+		#content .details2 {
+			font-size: 0.9em;
+			padding: 10px 0;
+		}
+			#content .details2 a {
+				text-decoration: none;
+			}
+	#content h2.title {
+		font-size: 0.9em;
+		text-transform: uppercase;
+		padding: 10px 20px;
+	}
+	
+#content .nopost {
+	height: 300px;
+}
+#content .readpost {
+	height: 493px;
+}
+#content .followers .person{
+	text-align: center;
+	padding-top: 40px;
+}
+#content .followers .person a{
+	font-family: Verdana;
+	font-size: 20px;
+	padding-left: 5px;
+}
+#content .followers .p{
+	width: 300px;
+	height: 280px;
+	padding-left: 20%;
+}
+
+#content .followers .p button{
+	right: 0;
+	width: 30%;
+}
+
+#content .searchResults table{
+	width: 100%;
+	text-align: center;
+}
+
+#content .searchResults table img{
+	padding-left: 20%;
+	width: 220px;
+	height: 180px;
+}
+
+#members .admin-members table{
+	width: 100%;
+}
+
+#members .admin-members table img{
+	padding-left: 20%;
+	width: 220px;
+	height: 180px;
+}
+
+#admintable button{
+	color: red;
+	margin-top: 190px;
+	margin-left: -145px;
+	margin-bottom: 20px;
+}
+
+#c{
+	color: blue;
+	text-align: center; 
+}
+
+#footer{
+	background-color: black;
+	font-family: Verdana;
+    text-align: center;
+    color: rgb(193, 146, 213);
+    background-position: 10px 20px;
+    padding: 15px;
+    width: %50;
+}

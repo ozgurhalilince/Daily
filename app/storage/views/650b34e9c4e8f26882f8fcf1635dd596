@@ -1,0 +1,104 @@
+<?php $__env->startSection('content'); ?>
+
+<div id="members">
+  <center><h1>ÜYELER</h1></center>
+  <div class="admin-members">
+    <div class="person">
+      <table id="admintable">
+      <?php $j=0; ?>
+        <?php $__empty_1 = true; foreach($members as $user): $__empty_1 = false; ?>  
+        <?php if($j%3==0): ?>
+          <tr>
+        <?php endif; ?>
+        <td>
+        <div class="admin-p">
+          <a href="m-profile-<?php echo $user->memberID; ?>">
+          <img align="left" src="<?php echo $user->photo; ?>" width="150" height="180">
+          </a>
+          <a href="adminDeleteMember-<?php echo $user->memberID; ?>"><button id="deleteMemberBut<?php echo $j; ?>">üyeyi <br>sil</button></a>
+          
+         <a href="m-profile-<?php echo $user->memberID; ?>"><?php echo $user->name; ?> <?php echo $user->surname; ?></a>
+        </div>
+        </td>       
+        <?php if($j%3==2): ?>
+          </tr>
+        <?php endif; ?>
+        <?php $j++; ?>
+        <?php endforeach; if ($__empty_1): ?>
+            <p>Bu kullanıcının takip ettiği kişi bulunmamaktadır.</p>
+        <?php endif; ?>
+      </table>
+    </div>  
+  </div>
+</div>
+  
+<div id="posts">
+  <center><h1>GÜNLÜK YAZILARI</h1></center>
+<?php $__empty_1 = true; foreach($posts as $post): $__empty_1 = false; ?>
+  <?php $j++; ?>  
+  <div class="post">
+    <input type="hidden" name="i-<?php echo $j; ?>" value="<?php echo $j; ?>">
+    <div class="l">
+      <a href="delete-post-<?php echo $post->postID; ?>"><button id="deletePostBut<?php echo $j; ?>">sil</button></a><br>
+      <p><b>Kişi:</b><br> <a href="m-profile-<?php echo $post->memberID;; ?>">
+        <?php echo $post->name;; ?> <?php echo $post->surname; ?></a></p>
+      <p><b>Tarih:</b><br> <?php echo $post->created_at;; ?></p>
+      <p><b>Görünebilirlik:</b><br> 
+        <?php if ($post->visibility == 0) 
+            echo "Sadece Ben";
+          else if ($post->visibility == 1) 
+            echo "Yalnız Üyeler";
+          else
+            echo "Herkes";
+         ?>
+      </p>
+    </div>
+    <div class="r">
+      <h2><a href="show-post-<?php echo $post->postID;; ?>"><?php echo $post->title; ?></a></h2>
+      <p><?php echo $post->content; ?></p>
+      <p class="details"><a href="show-post-<?php echo $post->postID;; ?>">Read More</a></p>
+    </div>
+  </div>
+  <?php endforeach; if ($__empty_1): ?>
+    <p>Henüz günlük yazısı bulunmamaktadır.</p>
+  <?php endif; ?>
+</div>
+
+<script type="text/javascript">
+
+for (var i = 1; i <= 100 ; i++) {
+   $("#deletePostBut"+i)
+      .css("color","red")  
+      .click(function(){
+        if (!confirm("Bu yazıyı silmek istediğinize emin misiniz?")) 
+          return false;
+      })
+};
+ 
+for (var i = 0; i <=<?php echo sizeof($members); ?> ; i++) {
+  $("#deleteMemberBut"+i)
+    .click(function(){
+      if (!confirm("Bu üyeyi silmek istediğinize emin misiniz?")) 
+        return false;
+    })
+};
+
+$("#b1")
+.click(function(){
+  $("#members")
+  .css('display','block')
+  $("#posts")
+  .css('display','none')
+})
+$("#b2")
+.click(function(){
+  $("#members")
+  .css('display','none')
+   $("#posts")
+  .css('display','block')
+})
+
+</script>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make("admin/kalip3", array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
